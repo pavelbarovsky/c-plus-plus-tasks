@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 #include <cmath>
+#include <fstream>
 using namespace std;
 
 /*
@@ -8,6 +10,11 @@ using namespace std;
 
 int main()
 {
+
+    std::ifstream fin;
+    std::ofstream fout;
+    fin.open("in.txt");
+    fout.open("out.txt");
 
     float x,n,sum;
     int i=1;
@@ -24,5 +31,10 @@ int main()
             sum = sum+(float)1/(i*x);
 }
     cout << sum << endl;
+
+    fin >> x >> n;
+    fout << sum;
+    fin.close();
+    fout.close();
 
 }
